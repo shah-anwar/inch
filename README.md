@@ -12,7 +12,7 @@
   <a href="LICENSE"><img alt="Licence: MIT" src="https://img.shields.io/badge/licence-MIT-green"></a>
 </p>
 
-<img src="docs/images/FR11.png" alt="Full argument graph: each node is an argument, arrows point from attacker to attacked, green border = IN, red border = OUT" width="820">
+<img src="docs/images/demo-evaluation.gif" alt="Submitting a counter-argument: the new argument is labelled IN, its target flips to OUT, and the change propagates up the attack tree" width="820">
 
 </div>
 
@@ -24,11 +24,16 @@ INCH is a debate platform where every contribution is a structured argument and 
 
 - **Scheme-based arguments.** Eight Walton-style schemes, each with typed variables and critical questions ([docs/SCHEMES.md](docs/SCHEMES.md)).
 - **Counter-arguments through critical questions.** A reply must answer one of the parent's critical questions, using a scheme that question allows.
+
+  <p align="center"><img src="docs/images/demo-counter-argument.gif" alt="Answering a critical question: choose the question and scheme, fill the variables, pick one of three wordings" width="760"></p>
+
 - **Live grounded evaluation.** Each new argument triggers a re-evaluation in the background, and status changes reach open pages over WebSocket.
 - **Interactive graph.** A Cytoscape.js minimap and a fullscreen graph, with status-coloured nodes and the path to the current argument highlighted.
 - **Bounded LLM help.** Mistral suggests schemes from free text, checks variable values before generation, and offers three neutral wordings to choose from.
 - **Admin tools.** Manage schemes, critical questions, the active scheme set and admin users.
 - **Shared contracts.** One Zod schema package (`@inch/types`) validates data on both the frontend and the backend.
+
+<p align="center"><img src="docs/images/FR11.png" alt="Full argument graph: each node is an argument, arrows point from attacker to attacked, green border = IN, red border = OUT" width="760"></p>
 
 ## How it works
 
