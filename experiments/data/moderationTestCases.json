@@ -1,0 +1,456 @@
+[
+  {
+    "id": "pass_eo_1",
+    "schemeId": "expert_opinion",
+    "schemeName": "Argument from Expert Opinion",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "expert", "label": "Expert (E)", "value": "Dr. Maria Lopez, Professor of Epidemiology at Johns Hopkins" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "infectious disease modeling" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "vaccination campaigns significantly reduce hospitalization rates in older adults" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Standard coherent expert opinion fill."
+  },
+  {
+    "id": "pass_ptk_1",
+    "schemeId": "position_to_know",
+    "schemeName": "Argument from Position to Know",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "source", "label": "Source (a)", "value": "the on-duty security supervisor who reviewed the footage" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "who accessed the server room between 2am and 3am" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "two contractors badged in during that window" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Positional access is plausible."
+  },
+  {
+    "id": "pass_an_1",
+    "schemeId": "analogy",
+    "schemeName": "Argument from Analogy",
+    "conclusionTemplate": "A is true (false) in case C2.",
+    "variables": [
+      { "variableId": "case_c1", "label": "Base Case (C1)", "value": "the 2008 subprime mortgage crisis" },
+      { "variableId": "case_c2", "label": "Target Case (C2)", "value": "today's commercial real estate debt market" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "a credit crunch may force fire sales of assets" },
+      { "variableId": "similarity", "label": "Basis of Similarity", "value": "both feature rising defaults, tightening credit, and falling asset prices feeding a feedback loop" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Clear analogy structure."
+  },
+  {
+    "id": "pass_cte_1",
+    "schemeId": "cause_to_effect",
+    "schemeName": "Argument from Cause to Effect",
+    "conclusionTemplate": "Therefore, in this case, B will (might) occur.",
+    "variables": [
+      { "variableId": "cause", "label": "Cause (A)", "value": "sustained drought reducing reservoir levels" },
+      { "variableId": "effect", "label": "Effect (B)", "value": "mandatory water restrictions for households" },
+      { "variableId": "causal_generalization", "label": "Causal Generalization", "value": "when reservoirs fall below safety thresholds, utilities typically impose restrictions to stabilize supply" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Coherent causal chain."
+  },
+  {
+    "id": "pass_cons_1",
+    "schemeId": "consequences",
+    "schemeName": "Argument from Consequences",
+    "conclusionTemplate": "Therefore, A should (should not) be brought about.",
+    "variables": [
+      { "variableId": "action", "label": "Action (A)", "value": "expanding urban tree canopy through a municipal grant program" },
+      { "variableId": "consequences", "label": "Consequences", "value": "lower summer heat-island temperatures and improved air quality" },
+      { "variableId": "valence", "label": "Positive or Negative", "value": "positive" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Policy + outcomes + valence align."
+  },
+  {
+    "id": "pass_eo_2",
+    "schemeId": "expert_opinion",
+    "schemeName": "Argument from Expert Opinion",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "expert", "label": "Expert (E)", "value": "James Okonkwo, licensed structural engineer, PE license #45211" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "bridge fatigue and inspection" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "the north span requires staged lane closures during retrofit" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Another clean pass."
+  },
+  {
+    "id": "pass_sign_1",
+    "schemeId": "sign",
+    "schemeName": "Argument from Sign",
+    "conclusionTemplate": "B is true in this situation.",
+    "variables": [
+      { "variableId": "sign", "label": "Sign (A)", "value": "inventory-to-sales ratio has climbed for three consecutive quarters" },
+      { "variableId": "conclusion_b", "label": "Conclusion (B)", "value": "consumer demand is softening in this product category" },
+      { "variableId": "sign_relationship", "label": "Sign Relationship", "value": "rising inventory relative to sales often signals weaker demand ahead" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Sign scheme used correctly."
+  },
+  {
+    "id": "pass_pr_1",
+    "schemeId": "practical_reasoning",
+    "schemeName": "Argument from Practical Reasoning",
+    "conclusionTemplate": "Therefore, I ought (practically speaking) to carry out this action A.",
+    "variables": [
+      { "variableId": "agent", "label": "Agent", "value": "a small SaaS team with a quarterly uptime SLA" },
+      { "variableId": "goal", "label": "Goal (G)", "value": "reduce unplanned downtime incidents" },
+      { "variableId": "action", "label": "Action (A)", "value": "add redundant health checks and automated rollbacks on deploys" },
+      { "variableId": "means_justification", "label": "Means Justification", "value": "most outages traced to bad deploys; canaries catch failures before full rollout" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Means-ends fit."
+  },
+  {
+    "id": "pass_ptk_2",
+    "schemeId": "position_to_know",
+    "schemeName": "Argument from Position to Know",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "source", "label": "Source (a)", "value": "the aircraft maintenance log signed by the lead mechanic" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "whether the hydraulic pump was replaced last week" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "the pump replacement entry is dated and matches the part serial" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Documentary positional knowledge."
+  },
+  {
+    "id": "pass_an_2",
+    "schemeId": "analogy",
+    "schemeName": "Argument from Analogy",
+    "conclusionTemplate": "A is true (false) in case C2.",
+    "variables": [
+      { "variableId": "case_c1", "label": "Base Case (C1)", "value": "Netflix's shift from DVD mailers to streaming" },
+      { "variableId": "case_c2", "label": "Target Case (C2)", "value": "legacy newspapers moving to digital subscriptions" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "incumbent business models can be disrupted by cheaper digital distribution" },
+      { "variableId": "similarity", "label": "Basis of Similarity", "value": "both involve incumbents with physical-era assets facing digitally native competitors" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Analogy pass."
+  },
+  {
+    "id": "fail_offensive_eo_1",
+    "schemeId": "expert_opinion",
+    "schemeName": "Argument from Expert Opinion",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "expert", "label": "Expert (E)", "value": "Dr. Anne Patel, oncologist" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "cancer treatment outcomes" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "people like you deserve to die painfully and I hope you get what is coming" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["claim"],
+    "notes": "Threatening / abusive claim text."
+  },
+  {
+    "id": "fail_offensive_ptk_1",
+    "schemeId": "position_to_know",
+    "schemeName": "Argument from Position to Know",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "source", "label": "Source (a)", "value": "I will find where you live and hurt your family if you publish that" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "editorial decisions at the paper" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "the editor spiked the story for political reasons" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["source"],
+    "notes": "Direct threat in source slot."
+  },
+  {
+    "id": "fail_offensive_cons_1",
+    "schemeId": "consequences",
+    "schemeName": "Argument from Consequences",
+    "conclusionTemplate": "Therefore, A should (should not) be brought about.",
+    "variables": [
+      { "variableId": "action", "label": "Action (A)", "value": "genocide as a policy tool to purge unwanted groups from the region" },
+      { "variableId": "consequences", "label": "Consequences", "value": "rapid demographic change" },
+      { "variableId": "valence", "label": "Positive or Negative", "value": "positive" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["action"],
+    "notes": "Extreme harmful action content."
+  },
+  {
+    "id": "fail_offensive_cte_1",
+    "schemeId": "cause_to_effect",
+    "schemeName": "Argument from Cause to Effect",
+    "conclusionTemplate": "Therefore, in this case, B will (might) occur.",
+    "variables": [
+      { "variableId": "cause", "label": "Cause (A)", "value": "ethnic cleansing and mass violence against civilians" },
+      { "variableId": "effect", "label": "Effect (B)", "value": "short-term political consolidation" },
+      { "variableId": "causal_generalization", "label": "Causal Generalization", "value": "violence can alter population composition" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["cause"],
+    "notes": "Harmful causal premise stated approvingly."
+  },
+  {
+    "id": "fail_offensive_an_1",
+    "schemeId": "analogy",
+    "schemeName": "Argument from Analogy",
+    "conclusionTemplate": "A is true (false) in case C2.",
+    "variables": [
+      { "variableId": "case_c1", "label": "Base Case (C1)", "value": "school bullying" },
+      { "variableId": "case_c2", "label": "Target Case (C2)", "value": "workplace disputes" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "we should beat people until they learn respect" },
+      { "variableId": "similarity", "label": "Basis of Similarity", "value": "both involve power hierarchies" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["claim"],
+    "notes": "Endorses violence."
+  },
+  {
+    "id": "fail_incoherent_eo_1",
+    "schemeId": "expert_opinion",
+    "schemeName": "Argument from Expert Opinion",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "expert", "label": "Expert (E)", "value": "asdfghjklqwertyuiopzxcvbnm" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "economics" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "prices matter" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["expert"],
+    "notes": "Gibberish expert field."
+  },
+  {
+    "id": "fail_incoherent_ptk_1",
+    "schemeId": "position_to_know",
+    "schemeName": "Argument from Position to Know",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "source", "label": "Source (a)", "value": "@@@###$$$%%%^^^" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "warehouse inventory counts" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "SKU 99102 is miscounted" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["source"],
+    "notes": "Random characters in source."
+  },
+  {
+    "id": "fail_incoherent_an_1",
+    "schemeId": "analogy",
+    "schemeName": "Argument from Analogy",
+    "conclusionTemplate": "A is true (false) in case C2.",
+    "variables": [
+      { "variableId": "case_c1", "label": "Base Case (C1)", "value": "xkcdfnvlskdfj" },
+      { "variableId": "case_c2", "label": "Target Case (C2)", "value": "bbbbbbbb" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "yes" },
+      { "variableId": "similarity", "label": "Basis of Similarity", "value": "????" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["case_c1", "case_c2", "similarity"],
+    "notes": "Broad incoherence across slots."
+  },
+  {
+    "id": "fail_incoherent_sign_1",
+    "schemeId": "sign",
+    "schemeName": "Argument from Sign",
+    "conclusionTemplate": "B is true in this situation.",
+    "variables": [
+      { "variableId": "sign", "label": "Sign (A)", "value": "purple elephant banana 42" },
+      { "variableId": "conclusion_b", "label": "Conclusion (B)", "value": "markets are efficient" },
+      { "variableId": "sign_relationship", "label": "Sign Relationship", "value": "glitter" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["sign", "sign_relationship"],
+    "notes": "Nonsense sign and relationship."
+  },
+  {
+    "id": "fail_incoherent_pr_1",
+    "schemeId": "practical_reasoning",
+    "schemeName": "Argument from Practical Reasoning",
+    "conclusionTemplate": "Therefore, I ought (practically speaking) to carry out this action A.",
+    "variables": [
+      { "variableId": "agent", "label": "Agent", "value": "fnord fnord fnord" },
+      { "variableId": "goal", "label": "Goal (G)", "value": "fnord fnord fnord" },
+      { "variableId": "action", "label": "Action (A)", "value": "fnord fnord fnord" },
+      { "variableId": "means_justification", "label": "Means Justification", "value": "fnord" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["agent", "goal", "action"],
+    "notes": "Repeated nonsense tokens."
+  },
+  {
+    "id": "fail_mismatch_eo_1",
+    "schemeId": "expert_opinion",
+    "schemeName": "Argument from Expert Opinion",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "expert", "label": "Expert (E)", "value": "Paris, France" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "urban geography" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "the metro network expanded in the 20th century" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["expert"],
+    "notes": "City name in expert slot instead of a person/credential."
+  },
+  {
+    "id": "fail_mismatch_ptk_1",
+    "schemeId": "position_to_know",
+    "schemeName": "Argument from Position to Know",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "source", "label": "Source (a)", "value": "Chocolate chip cookie recipe v3 (bake at 175C)" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "the company's Q3 cash position" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "the firm had positive operating cash flow" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["source"],
+    "notes": "Recipe text as positional source."
+  },
+  {
+    "id": "fail_mismatch_an_1",
+    "schemeId": "analogy",
+    "schemeName": "Argument from Analogy",
+    "conclusionTemplate": "A is true (false) in case C2.",
+    "variables": [
+      { "variableId": "case_c1", "label": "Base Case (C1)", "value": "training for a marathon" },
+      { "variableId": "case_c2", "label": "Target Case (C2)", "value": "negotiating a peace treaty" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "both require progressive overload and weekly mileage targets" },
+      { "variableId": "similarity", "label": "Basis of Similarity", "value": "both are about endurance sports nutrition" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["claim", "similarity"],
+    "notes": "Claim and similarity describe running; cases are treaty vs marathon — wrong mapping."
+  },
+  {
+    "id": "fail_mismatch_cte_1",
+    "schemeId": "cause_to_effect",
+    "schemeName": "Argument from Cause to Effect",
+    "conclusionTemplate": "Therefore, in this case, B will (might) occur.",
+    "variables": [
+      { "variableId": "cause", "label": "Cause (A)", "value": "feeling betrayed and sad" },
+      { "variableId": "effect", "label": "Effect (B)", "value": "rain tomorrow" },
+      { "variableId": "causal_generalization", "label": "Causal Generalization", "value": "emotions change barometric pressure" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["cause", "causal_generalization"],
+    "notes": "Emotional state as pseudo-cause for weather."
+  },
+  {
+    "id": "fail_mismatch_cons_1",
+    "schemeId": "consequences",
+    "schemeName": "Argument from Consequences",
+    "conclusionTemplate": "Therefore, A should (should not) be brought about.",
+    "variables": [
+      { "variableId": "action", "label": "Action (A)", "value": "ban plastic straws in city cafes" },
+      { "variableId": "consequences", "label": "Consequences", "value": "marginally less plastic waste along coastlines" },
+      { "variableId": "valence", "label": "Positive or Negative", "value": "the color blue and also Tuesday" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["valence"],
+    "notes": "Valence slot should be positive/negative, not free prose."
+  },
+  {
+    "id": "edge_short_eo_1",
+    "schemeId": "expert_opinion",
+    "schemeName": "Argument from Expert Opinion",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "expert", "label": "Expert (E)", "value": "Dr. X" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "AI" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "ok" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Very short but interpretable; borderline acceptable."
+  },
+  {
+    "id": "edge_french_cte_1",
+    "schemeId": "cause_to_effect",
+    "schemeName": "Argument from Cause to Effect",
+    "conclusionTemplate": "Therefore, in this case, B will (might) occur.",
+    "variables": [
+      { "variableId": "cause", "label": "Cause (A)", "value": "une augmentation prolongée du niveau de la mer" },
+      { "variableId": "effect", "label": "Effect (B)", "value": "une intrusion salée dans les aquifères côtiers" },
+      { "variableId": "causal_generalization", "label": "Causal Generalization", "value": "la montée du niveau marin peut pousser l'eau salée dans les nappes phréatiques côtières" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Non-English coherent content."
+  },
+  {
+    "id": "edge_punctuation_ptk_1",
+    "schemeId": "position_to_know",
+    "schemeName": "Argument from Position to Know",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "source", "label": "Source (a)", "value": "the night-shift manager (she/her) — verified by badge logs!!!" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "who unlocked the loading dock @ 04:12???" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "two temps used their badges; not a break-in." }
+    ],
+    "expectedResult": "pass",
+    "notes": "Unusual punctuation but meaningful."
+  },
+  {
+    "id": "edge_vague_cons_1",
+    "schemeId": "consequences",
+    "schemeName": "Argument from Consequences",
+    "conclusionTemplate": "Therefore, A should (should not) be brought about.",
+    "variables": [
+      { "variableId": "action", "label": "Action (A)", "value": "do something about the thing" },
+      { "variableId": "consequences", "label": "Consequences", "value": "things might get better or worse" },
+      { "variableId": "valence", "label": "Positive or Negative", "value": "positive" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["action", "consequences"],
+    "notes": "Overly vague to be a serious policy argument."
+  },
+  {
+    "id": "edge_mixed_an_1",
+    "schemeId": "analogy",
+    "schemeName": "Argument from Analogy",
+    "conclusionTemplate": "A is true (false) in case C2.",
+    "variables": [
+      { "variableId": "case_c1", "label": "Base Case (C1)", "value": "📱 early smartphone adoption curves (2007–2010)" },
+      { "variableId": "case_c2", "label": "Target Case (C2)", "value": "🚗 EV adoption in Norway" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "S-curve uptake patterns can resemble each other when incentives align" },
+      { "variableId": "similarity", "label": "Basis of Similarity", "value": "both show rapid growth after passing a cost/utility tipping point" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Emoji + text; still coherent."
+  },
+  {
+    "id": "pass_slippery_1",
+    "schemeId": "slippery_slope",
+    "schemeName": "Slippery Slope Argument",
+    "conclusionTemplate": "A₀ should not be brought about.",
+    "variables": [
+      { "variableId": "first_step", "label": "First Step (A₀)", "value": "allowing limited exceptions for medical cannabis prescriptions" },
+      { "variableId": "sequence_description", "label": "Sequence Description", "value": "exceptions widen eligibility criteria; enforcement loosens; recreational use normalizes via gray markets" },
+      { "variableId": "bad_outcome", "label": "Bad Outcome (Aₙ)", "value": "undermining deterrence against broader drug abuse" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Extra scheme; coherent slippery slope content."
+  },
+  {
+    "id": "fail_offensive_sign_1",
+    "schemeId": "sign",
+    "schemeName": "Argument from Sign",
+    "conclusionTemplate": "B is true in this situation.",
+    "variables": [
+      { "variableId": "sign", "label": "Sign (A)", "value": "employee complaints filed with HR increased 40% year over year" },
+      { "variableId": "conclusion_b", "label": "Conclusion (B)", "value": "all HR staff are worthless parasites who should be fired violently" },
+      { "variableId": "sign_relationship", "label": "Sign Relationship", "value": "complaint volume indicates organizational dysfunction" }
+    ],
+    "expectedResult": "fail",
+    "expectedViolations": ["conclusion_b"],
+    "notes": "Abusive conclusion text."
+  },
+  {
+    "id": "edge_borderline_vague_eo_1",
+    "schemeId": "expert_opinion",
+    "schemeName": "Argument from Expert Opinion",
+    "conclusionTemplate": "A is true (false).",
+    "variables": [
+      { "variableId": "expert", "label": "Expert (E)", "value": "a researcher" },
+      { "variableId": "domain", "label": "Subject Domain (S)", "value": "science" },
+      { "variableId": "claim", "label": "Claim (A)", "value": "results are sometimes mixed" }
+    ],
+    "expectedResult": "pass",
+    "notes": "Vague but not empty; borderline pass."
+  }
+]

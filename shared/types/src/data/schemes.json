@@ -1,0 +1,455 @@
+{
+  "version": "1.0.0",
+  "schemes": [
+    {
+      "id": "expert_opinion",
+      "name": "Argument from Expert Opinion",
+      "description": "Argues that a claim is true because a credible expert in the relevant field asserts it. One of the most common argument patterns in scientific, political, and policy debates.",
+      "conclusion": "A is true (false).",
+      "variables": [
+        {
+          "id": "expert",
+          "name": "Expert (E)",
+          "description": "The expert being cited as a source",
+          "placeholder": "e.g. \"Dr. Jane Smith, Professor of Climate Science at MIT\"",
+          "type": "entity",
+          "required": true
+        },
+        {
+          "id": "domain",
+          "name": "Subject Domain (S)",
+          "description": "The field or discipline in which E is an expert",
+          "placeholder": "e.g. \"climate science\", \"epidemiology\", \"economics\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "claim",
+          "name": "Claim (A)",
+          "description": "The proposition E has asserted",
+          "placeholder": "e.g. \"global temperatures will rise by 2°C by 2100\"",
+          "type": "claim",
+          "required": true
+        }
+      ],
+      "criticalQuestions": [
+        {
+          "id": "cq_eo_1",
+          "text": "Expertise Question: How credible is E as an expert source?",
+          "description": "Challenges the overall credibility and standing of the cited expert — their qualifications, track record, and recognition within their field.",
+          "validResponseSchemeIds": ["position_to_know", "sign"]
+        },
+        {
+          "id": "cq_eo_2",
+          "text": "Field Question: Is E an expert in the field that A is in?",
+          "description": "Challenges whether the expert's domain of expertise actually matches the subject matter of the claim. An expert in one field is not automatically credible in another.",
+          "validResponseSchemeIds": ["position_to_know", "analogy"]
+        },
+        {
+          "id": "cq_eo_3",
+          "text": "Opinion Question: What did E assert that implies A?",
+          "description": "Challenges the accuracy of the attribution — did E actually assert A, or has the claim been misrepresented or taken out of context?",
+          "validResponseSchemeIds": []
+        },
+        {
+          "id": "cq_eo_4",
+          "text": "Trustworthiness Question: Is E personally reliable as a source?",
+          "description": "Challenges E's personal honesty and reliability independent of their technical expertise — conflicts of interest, past unreliability, or dishonesty.",
+          "validResponseSchemeIds": ["sign", "cause_to_effect"]
+        },
+        {
+          "id": "cq_eo_5",
+          "text": "Consistency Question: Is A consistent with what other experts assert?",
+          "description": "Challenges whether the cited expert's opinion is representative of expert consensus, or whether they are an outlier.",
+          "validResponseSchemeIds": ["expert_opinion", "position_to_know"]
+        }
+      ]
+    },
+    {
+      "id": "position_to_know",
+      "name": "Argument from Position to Know",
+      "description": "Argues that a claim is true because the source is in a position — by virtue of their role, location, access, or experience — to have direct knowledge of it. Distinct from Expert Opinion: this is about *positional access* to knowledge, not formal expertise.",
+      "conclusion": "A is true (false).",
+      "variables": [
+        {
+          "id": "source",
+          "name": "Source (a)",
+          "description": "The person or entity making the assertion",
+          "placeholder": "e.g. \"an eyewitness at the scene\", \"the company's CFO\"",
+          "type": "entity",
+          "required": true
+        },
+        {
+          "id": "domain",
+          "name": "Subject Domain (S)",
+          "description": "The domain or field in which the source has positional access",
+          "placeholder": "e.g. \"the financial state of the company\", \"events at the protest\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "claim",
+          "name": "Claim (A)",
+          "description": "The proposition being asserted as true or false",
+          "placeholder": "e.g. \"the company was insolvent in Q3\"",
+          "type": "claim",
+          "required": true
+        }
+      ],
+      "criticalQuestions": [
+        {
+          "id": "cq_ptk_1",
+          "text": "Is `a` in a position to know whether A is true (false)?",
+          "description": "The central challenge: does the source actually have the access, role, or vantage point claimed? Being present is not the same as having knowledge.",
+          "validResponseSchemeIds": ["sign", "cause_to_effect"]
+        },
+        {
+          "id": "cq_ptk_2",
+          "text": "Is `a` an honest (trustworthy, reliable) source?",
+          "description": "Challenges the credibility and sincerity of the source independent of their positional access.",
+          "validResponseSchemeIds": ["sign", "cause_to_effect", "consequences"]
+        },
+        {
+          "id": "cq_ptk_3",
+          "text": "Did `a` assert that A is true (false)?",
+          "description": "Challenges whether the source actually made the attributed assertion, or whether the claim has been misrepresented.",
+          "validResponseSchemeIds": []
+        }
+      ]
+    },
+    {
+      "id": "analogy",
+      "name": "Argument from Analogy",
+      "description": "Argues that because two cases are similar in relevant respects, what is true in one case is also true in the other. One of the most fundamental and flexible forms of reasoning.",
+      "conclusion": "A is true (false) in case C2.",
+      "variables": [
+        {
+          "id": "case_c1",
+          "name": "Base Case (C1)",
+          "description": "The known case from which the analogy is drawn",
+          "placeholder": "e.g. \"the 2008 financial crisis\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "case_c2",
+          "name": "Target Case (C2)",
+          "description": "The new case to which the analogy is applied",
+          "placeholder": "e.g. \"the current housing market situation\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "claim",
+          "name": "Claim (A)",
+          "description": "The proposition that holds in C1 and is argued to hold in C2",
+          "placeholder": "e.g. \"regulatory intervention is necessary\"",
+          "type": "claim",
+          "required": true
+        },
+        {
+          "id": "similarity",
+          "name": "Basis of Similarity",
+          "description": "The relevant respects in which C1 and C2 are similar",
+          "placeholder": "e.g. \"both involve overleveraged financial institutions with insufficient capital reserves\"",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "criticalQuestions": [
+        {
+          "id": "cq_an_1",
+          "text": "Are there differences between C1 and C2 that would tend to undermine the force of the similarity cited?",
+          "description": "The primary attack on any analogy: the two cases are actually relevantly different in ways that break the comparison.",
+          "validResponseSchemeIds": ["analogy", "cause_to_effect"]
+        },
+        {
+          "id": "cq_an_2",
+          "text": "Is A true (false) in C1?",
+          "description": "Challenges the factual basis of the analogy itself — if the base case premise is wrong, the whole argument collapses.",
+          "validResponseSchemeIds": ["expert_opinion", "position_to_know", "sign"]
+        },
+        {
+          "id": "cq_an_3",
+          "text": "Is there some other case C3 that is also similar to C1, but in which A is false (true)?",
+          "description": "The counteranalogy: presents a competing case that is equally similar to C1 but yields the opposite conclusion, undermining the original analogy.",
+          "validResponseSchemeIds": ["analogy"]
+        }
+      ]
+    },
+    {
+      "id": "cause_to_effect",
+      "name": "Argument from Cause to Effect",
+      "description": "Argues that because a causal relationship generally holds between A and B, and A is occurring (or will occur), B will (or might) follow. The backbone of most scientific, policy, and risk arguments.",
+      "conclusion": "Therefore, in this case, B will (might) occur.",
+      "variables": [
+        {
+          "id": "cause",
+          "name": "Cause (A)",
+          "description": "The causal event or condition",
+          "placeholder": "e.g. \"increased atmospheric CO₂\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "effect",
+          "name": "Effect (B)",
+          "description": "The effect claimed to result from A",
+          "placeholder": "e.g. \"rising global average temperatures\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "causal_generalization",
+          "name": "Causal Generalization",
+          "description": "The general causal principle connecting A to B",
+          "placeholder": "e.g. \"CO₂ traps heat in the atmosphere, which raises surface temperatures\"",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "criticalQuestions": [
+        {
+          "id": "cq_ce_1",
+          "text": "How strong is the causal generalization?",
+          "description": "Challenges the reliability and universality of the general causal claim — is it well established, contested, or only weakly supported?",
+          "validResponseSchemeIds": ["expert_opinion", "sign", "analogy"]
+        },
+        {
+          "id": "cq_ce_2",
+          "text": "Is the evidence cited (if any) strong enough to warrant the causal generalization?",
+          "description": "Challenges the evidential basis directly — not whether the causal claim is true in principle, but whether it has been adequately demonstrated.",
+          "validResponseSchemeIds": ["expert_opinion", "sign", "position_to_know"]
+        },
+        {
+          "id": "cq_ce_3",
+          "text": "Are there other causal factors that could interfere with the production of the effect in the given case?",
+          "description": "Challenges whether confounding variables, countervailing forces, or contextual differences prevent the general causal relationship from holding in this specific instance.",
+          "validResponseSchemeIds": ["cause_to_effect", "sign"]
+        }
+      ]
+    },
+    {
+      "id": "consequences",
+      "name": "Argument from Consequences",
+      "description": "Argues for or against an action or policy based on the good or bad outcomes it will produce. Distinct from Cause to Effect in that it is evaluative — not just \"B will happen\" but \"B is good/bad, therefore do/don't do A.\"",
+      "conclusion": "Therefore, A should (should not) be brought about.",
+      "variables": [
+        {
+          "id": "action",
+          "name": "Action (A)",
+          "description": "The action or policy under consideration",
+          "placeholder": "e.g. \"introducing a carbon tax\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "consequences",
+          "name": "Consequences",
+          "description": "The good or bad consequences predicted to follow from A",
+          "placeholder": "e.g. \"a reduction in carbon emissions of 20% over ten years\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "valence",
+          "name": "Positive or Negative",
+          "description": "Whether the consequences support (positive) or oppose (negative) the action",
+          "placeholder": "e.g. \"positive\" or \"negative\"",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "criticalQuestions": [
+        {
+          "id": "cq_co_1",
+          "text": "How strong is the likelihood that the cited consequences will (may, must) occur?",
+          "description": "Challenges the probability of the predicted consequences — are they certain, likely, merely possible, or speculative?",
+          "validResponseSchemeIds": ["cause_to_effect", "sign", "expert_opinion"]
+        },
+        {
+          "id": "cq_co_2",
+          "text": "What evidence supports the claim that the cited consequences will occur, and is it sufficient to support the strength of the claim adequately?",
+          "description": "Challenges the evidential basis for predicting the consequences — not just whether they might happen but whether there is actual support for the prediction.",
+          "validResponseSchemeIds": ["expert_opinion", "analogy", "sign"]
+        },
+        {
+          "id": "cq_co_3",
+          "text": "Are there other opposite consequences (bad as opposed to good, for example) that should be taken into account?",
+          "description": "Challenges whether the argument has considered countervailing consequences that cut against the conclusion — the other side of the ledger.",
+          "validResponseSchemeIds": ["consequences", "practical_reasoning"]
+        }
+      ]
+    },
+    {
+      "id": "practical_reasoning",
+      "name": "Argument from Practical Reasoning",
+      "description": "Argues that an agent ought to perform an action because it is a means to achieve a goal the agent holds. The fundamental structure of goal-directed, instrumental reasoning.",
+      "conclusion": "Therefore, I ought (practically speaking) to carry out this action A.",
+      "variables": [
+        {
+          "id": "agent",
+          "name": "Agent",
+          "description": "The person or entity who has the goal",
+          "placeholder": "e.g. \"the UK government\"",
+          "type": "entity",
+          "required": true
+        },
+        {
+          "id": "goal",
+          "name": "Goal (G)",
+          "description": "The goal the agent is trying to achieve",
+          "placeholder": "e.g. \"reduce net carbon emissions to zero by 2050\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "action",
+          "name": "Action (A)",
+          "description": "The action being proposed as a means to achieve G",
+          "placeholder": "e.g. \"ban the sale of new petrol and diesel cars from 2030\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "means_justification",
+          "name": "Means Justification",
+          "description": "Why A is an effective means to realize G",
+          "placeholder": "e.g. \"transport accounts for 27% of UK emissions and electric vehicles produce significantly lower lifecycle emissions\"",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "criticalQuestions": [
+        {
+          "id": "cq_pr_1",
+          "text": "What other goals do I have that might conflict with G?",
+          "description": "Challenges whether the proposed action sacrifices other important goals the agent holds — the argument ignores competing priorities.",
+          "validResponseSchemeIds": ["consequences", "practical_reasoning"]
+        },
+        {
+          "id": "cq_pr_2",
+          "text": "What alternative actions to bringing about A that would also bring about G should be considered?",
+          "description": "Challenges whether A is the only or best means to achieve G — there may be better, cheaper, or less costly alternatives.",
+          "validResponseSchemeIds": ["practical_reasoning", "consequences"]
+        },
+        {
+          "id": "cq_pr_3",
+          "text": "Among bringing about A and these alternative actions, which is arguably the most efficient?",
+          "description": "Challenges whether A is the most efficient means compared to available alternatives — even if A works, something else works better.",
+          "validResponseSchemeIds": ["practical_reasoning", "expert_opinion"]
+        },
+        {
+          "id": "cq_pr_4",
+          "text": "What grounds are there for arguing that it is practically possible for me to bring about A?",
+          "description": "Challenges feasibility — the action may be theoretically sound but practically unachievable given real-world constraints.",
+          "validResponseSchemeIds": ["cause_to_effect", "sign"]
+        },
+        {
+          "id": "cq_pr_5",
+          "text": "What consequences of bringing about A should also be taken into account?",
+          "description": "Challenges whether the side effects and unintended consequences of A have been adequately considered.",
+          "validResponseSchemeIds": ["consequences", "slippery_slope"]
+        }
+      ]
+    },
+    {
+      "id": "slippery_slope",
+      "name": "Slippery Slope Argument",
+      "description": "Argues against a proposal by claiming that accepting it will set off a chain of events — each step leading plausibly to the next — culminating in a disastrous or unacceptable outcome. The force of the argument depends on the plausibility of each step in the sequence.",
+      "conclusion": "A₀ should not be brought about.",
+      "variables": [
+        {
+          "id": "first_step",
+          "name": "First Step (A₀)",
+          "description": "The initial action or proposal being opposed",
+          "placeholder": "e.g. \"legalising assisted dying for terminally ill patients\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "sequence_description",
+          "name": "Sequence Description",
+          "description": "The chain of events leading from A₀ to the bad outcome, with each step described",
+          "placeholder": "e.g. \"This will lead to pressure to extend eligibility to chronic illness, then to mental illness, then to elderly patients who feel like a burden, ultimately normalising the ending of lives that are deemed insufficiently valuable\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "bad_outcome",
+          "name": "Bad Outcome (Aₙ)",
+          "description": "The disastrous final outcome at the end of the chain",
+          "placeholder": "e.g. \"the systematic devaluation of human life and state-sanctioned euthanasia of vulnerable people\"",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "criticalQuestions": [
+        {
+          "id": "cq_ss_1",
+          "text": "What intervening propositions in the sequence linking A₀ with Aₙ are actually given?",
+          "description": "Challenges whether the slippery slope sequence has actually been specified — the argument cannot rest on a vague gesture at a chain of events without spelling out the steps.",
+          "validResponseSchemeIds": []
+        },
+        {
+          "id": "cq_ss_2",
+          "text": "What other steps are required to fill in the sequence of events, to make it plausible?",
+          "description": "Challenges whether the sequence is complete — even if some steps are given, there may be missing links that are implausible or require independent justification.",
+          "validResponseSchemeIds": ["cause_to_effect", "expert_opinion"]
+        },
+        {
+          "id": "cq_ss_3",
+          "text": "What are the weakest links in the sequence, where specific critical questions should be asked on whether one event will really lead to another?",
+          "description": "Identifies and challenges the most vulnerable step in the causal chain — the place where the sequence is most likely to break down.",
+          "validResponseSchemeIds": ["cause_to_effect", "analogy"]
+        }
+      ]
+    },
+    {
+      "id": "sign",
+      "name": "Argument from Sign",
+      "description": "Argues from an observable indicator to the existence of some state or event that the indicator typically signals. The sign does not cause the conclusion — it merely correlates with or indicates it. The classic \"where there's smoke, there's fire\" structure.",
+      "conclusion": "B is true in this situation.",
+      "variables": [
+        {
+          "id": "sign",
+          "name": "Sign (A)",
+          "description": "The observable indicator or finding",
+          "placeholder": "e.g. \"the country's bond yields have risen sharply over three consecutive weeks\"",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "conclusion_b",
+          "name": "Conclusion (B)",
+          "description": "The state or event the sign indicates",
+          "placeholder": "e.g. \"the markets have lost confidence in the government's fiscal management\"",
+          "type": "claim",
+          "required": true
+        },
+        {
+          "id": "sign_relationship",
+          "name": "Sign Relationship",
+          "description": "The general principle connecting the sign to what it indicates",
+          "placeholder": "e.g. \"rising bond yields generally indicate that markets have lost confidence in a government's ability to manage its debt\"",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "criticalQuestions": [
+        {
+          "id": "cq_si_1",
+          "text": "What is the strength of the correlation of the sign with the event signified?",
+          "description": "Challenges how reliably the sign actually indicates the conclusion — the correlation may be weak, context-dependent, or historically unreliable.",
+          "validResponseSchemeIds": ["cause_to_effect", "expert_opinion", "analogy"]
+        },
+        {
+          "id": "cq_si_2",
+          "text": "Are there other events that would more reliably account for the sign?",
+          "description": "Challenges whether the sign is better explained by a different conclusion — the sign is real, but it indicates something else.",
+          "validResponseSchemeIds": ["cause_to_effect", "analogy", "expert_opinion"]
+        }
+      ]
+    }
+  ]
+}

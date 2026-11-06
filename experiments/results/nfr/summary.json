@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-04-21T16:29:31.996Z",
+  "kind": "nfr_threshold_benchmark_v1",
+  "microbench": {
+    "fullGraph": [
+      {
+        "nodeCount": 100,
+        "iterations": 50,
+        "p50Ms": 0.6661,
+        "p95Ms": 3.227
+      },
+      {
+        "nodeCount": 200,
+        "iterations": 50,
+        "p50Ms": 1.8555,
+        "p95Ms": 2.2224
+      },
+      {
+        "nodeCount": 300,
+        "iterations": 50,
+        "p50Ms": 4.0682,
+        "p95Ms": 4.4029
+      },
+      {
+        "nodeCount": 500,
+        "iterations": 50,
+        "p50Ms": 11.7306,
+        "p95Ms": 13.4805
+      }
+    ],
+    "branch": [
+      {
+        "pathNodes": 5,
+        "iterations": 50,
+        "p50Ms": 0.0016,
+        "p95Ms": 0.0086
+      },
+      {
+        "pathNodes": 10,
+        "iterations": 50,
+        "p50Ms": 0.0032,
+        "p95Ms": 0.0386
+      },
+      {
+        "pathNodes": 15,
+        "iterations": 50,
+        "p50Ms": 0.0046,
+        "p95Ms": 0.0141
+      },
+      {
+        "pathNodes": 20,
+        "iterations": 50,
+        "p50Ms": 0.0063,
+        "p95Ms": 0.0478
+      },
+      {
+        "pathNodes": 25,
+        "iterations": 50,
+        "p50Ms": 0.0156,
+        "p95Ms": 0.4955
+      }
+    ],
+    "environment": {
+      "nodeVersion": "v25.2.1",
+      "platform": "darwin x64"
+    }
+  },
+  "pipeline": {
+    "kind": "nfr_pipeline_bench_v1",
+    "iterations": 30,
+    "p50Ms": 100.3064,
+    "p95Ms": 276.3699,
+    "note": "Time from evaluationQueue.add() until the new argument row leaves UNDECIDED (BullMQ worker + Prisma). Measured with a dedicated worker process, Redis, and PostgreSQL on the same host as the benchmark script. Does not include HTTP handler latency or WebSocket delivery; the HTTP handler returns after enqueue, before this interval completes."
+  }
+}

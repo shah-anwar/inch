@@ -1,0 +1,818 @@
+{
+  "promptName": "structured",
+  "model": "mistral-small-latest",
+  "mock": false,
+  "runs": [
+    {
+      "testCaseId": "pass_eo_1",
+      "schemeId": "expert_opinion",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 266,
+        "completion": 13,
+        "total": 279
+      },
+      "latencyMs": 405,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_ptk_1",
+      "schemeId": "position_to_know",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 274,
+        "completion": 13,
+        "total": 287
+      },
+      "latencyMs": 397,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_an_1",
+      "schemeId": "analogy",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 306,
+        "completion": 13,
+        "total": 319
+      },
+      "latencyMs": 386,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_cte_1",
+      "schemeId": "cause_to_effect",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 276,
+        "completion": 13,
+        "total": 289
+      },
+      "latencyMs": 400,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_cons_1",
+      "schemeId": "consequences",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 261,
+        "completion": 13,
+        "total": 274
+      },
+      "latencyMs": 396,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_eo_2",
+      "schemeId": "expert_opinion",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 273,
+        "completion": 13,
+        "total": 286
+      },
+      "latencyMs": 419,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_sign_1",
+      "schemeId": "sign",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 269,
+        "completion": 13,
+        "total": 282
+      },
+      "latencyMs": 529,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_pr_1",
+      "schemeId": "practical_reasoning",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 315,
+        "completion": 13,
+        "total": 328
+      },
+      "latencyMs": 622,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_ptk_2",
+      "schemeId": "position_to_know",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 271,
+        "completion": 13,
+        "total": 284
+      },
+      "latencyMs": 343,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_an_2",
+      "schemeId": "analogy",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 301,
+        "completion": 13,
+        "total": 314
+      },
+      "latencyMs": 715,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_offensive_eo_1",
+      "schemeId": "expert_opinion",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "claim"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"claim\", \"reason\": \"contains abusive, threatening, and hateful language that violates safety criteria\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "claim",
+            "reason": "contains abusive, threatening, and hateful language that violates safety criteria"
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 268,
+        "completion": 39,
+        "total": 307
+      },
+      "latencyMs": 545,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_offensive_ptk_1",
+      "schemeId": "position_to_know",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "source"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"source\", \"reason\": \"Value is threatening and abusive, violating safety criteria.\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "source",
+            "reason": "Value is threatening and abusive, violating safety criteria."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 271,
+        "completion": 35,
+        "total": 306
+      },
+      "latencyMs": 506,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_offensive_cons_1",
+      "schemeId": "consequences",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "action"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"action\", \"reason\": \"The action 'genocide as a policy tool to purge unwanted groups from the region' is harmful, abusive, and violates ethical standards.\"}, {\"variableId\": \"consequences\", \"reason\": \"The consequence 'rapid demographic change' is not inherently positive or meaningful in this context without further justification.\"}, {\"variableId\": \"valence\", \"reason\": \"The valence 'positive' is inappropriate for the action described, as genocide cannot be ethically justified.\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "action",
+            "reason": "The action 'genocide as a policy tool to purge unwanted groups from the region' is harmful, abusive, and violates ethical standards."
+          },
+          {
+            "variableId": "consequences",
+            "reason": "The consequence 'rapid demographic change' is not inherently positive or meaningful in this context without further justification."
+          },
+          {
+            "variableId": "valence",
+            "reason": "The valence 'positive' is inappropriate for the action described, as genocide cannot be ethically justified."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 257,
+        "completion": 119,
+        "total": 376
+      },
+      "latencyMs": 1032,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_offensive_cte_1",
+      "schemeId": "cause_to_effect",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "cause"
+      ],
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": false,
+      "tokenUsage": {
+        "prompt": 268,
+        "completion": 13,
+        "total": 281
+      },
+      "latencyMs": 341,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_offensive_an_1",
+      "schemeId": "analogy",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "claim"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"claim\", \"reason\": \"Contains harmful and abusive content (advocating violence)\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "claim",
+            "reason": "Contains harmful and abusive content (advocating violence)"
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 280,
+        "completion": 36,
+        "total": 316
+      },
+      "latencyMs": 710,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_incoherent_eo_1",
+      "schemeId": "expert_opinion",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "expert"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"expert\", \"reason\": \"Value is not readable or meaningful for the expert role (nonsensical string).\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "expert",
+            "reason": "Value is not readable or meaningful for the expert role (nonsensical string)."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 260,
+        "completion": 43,
+        "total": 303
+      },
+      "latencyMs": 691,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_incoherent_ptk_1",
+      "schemeId": "position_to_know",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "source"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"source\", \"reason\": \"Value contains non-readable or meaningless characters for a source identifier\"}, {\"variableId\": \"domain\", \"reason\": \"Value is not a valid or meaningful subject domain description\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "source",
+            "reason": "Value contains non-readable or meaningless characters for a source identifier"
+          },
+          {
+            "variableId": "domain",
+            "reason": "Value is not a valid or meaningful subject domain description"
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 267,
+        "completion": 58,
+        "total": 325
+      },
+      "latencyMs": 693,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_incoherent_an_1",
+      "schemeId": "analogy",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "case_c1",
+        "case_c2",
+        "similarity"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"case_c1\", \"reason\": \"Value is not meaningful or coherent for a base case in an argument from analogy.\"}, {\"variableId\": \"case_c2\", \"reason\": \"Value is not meaningful or coherent for a target case in an argument from analogy.\"}, {\"variableId\": \"claim\", \"reason\": \"Value 'yes' is not a coherent or meaningful claim for the conclusion template.\"}, {\"variableId\": \"similarity\", \"reason\": \"Basis of similarity is missing or not specified.\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "case_c1",
+            "reason": "Value is not meaningful or coherent for a base case in an argument from analogy."
+          },
+          {
+            "variableId": "case_c2",
+            "reason": "Value is not meaningful or coherent for a target case in an argument from analogy."
+          },
+          {
+            "variableId": "claim",
+            "reason": "Value 'yes' is not a coherent or meaningful claim for the conclusion template."
+          },
+          {
+            "variableId": "similarity",
+            "reason": "Basis of similarity is missing or not specified."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 278,
+        "completion": 124,
+        "total": 402
+      },
+      "latencyMs": 960,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_incoherent_sign_1",
+      "schemeId": "sign",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "sign",
+        "sign_relationship"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"sign\", \"reason\": \"Value is nonsensical and does not represent a meaningful sign for the conclusion\"}, {\"variableId\": \"sign_relationship\", \"reason\": \"Value 'glitter' is not a valid or meaningful relationship descriptor for an Argument from Sign\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "sign",
+            "reason": "Value is nonsensical and does not represent a meaningful sign for the conclusion"
+          },
+          {
+            "variableId": "sign_relationship",
+            "reason": "Value 'glitter' is not a valid or meaningful relationship descriptor for an Argument from Sign"
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 249,
+        "completion": 72,
+        "total": 321
+      },
+      "latencyMs": 688,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_incoherent_pr_1",
+      "schemeId": "practical_reasoning",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "agent",
+        "goal",
+        "action"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"agent\", \"reason\": \"Value is not meaningful or readable for the agent role.\"}, {\"variableId\": \"goal\", \"reason\": \"Value is not meaningful or readable for the goal role.\"}, {\"variableId\": \"action\", \"reason\": \"Value is not meaningful or readable for the action role.\"}, {\"variableId\": \"means_justification\", \"reason\": \"Value is not meaningful or readable for the means justification role.\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "agent",
+            "reason": "Value is not meaningful or readable for the agent role."
+          },
+          {
+            "variableId": "goal",
+            "reason": "Value is not meaningful or readable for the goal role."
+          },
+          {
+            "variableId": "action",
+            "reason": "Value is not meaningful or readable for the action role."
+          },
+          {
+            "variableId": "means_justification",
+            "reason": "Value is not meaningful or readable for the means justification role."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 284,
+        "completion": 109,
+        "total": 393
+      },
+      "latencyMs": 889,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_mismatch_eo_1",
+      "schemeId": "expert_opinion",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "expert"
+      ],
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": false,
+      "tokenUsage": {
+        "prompt": 258,
+        "completion": 13,
+        "total": 271
+      },
+      "latencyMs": 321,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_mismatch_ptk_1",
+      "schemeId": "position_to_know",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "source"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"source\", \"reason\": \"Value is not a credible source for the company's Q3 cash position claim.\"}, {\"variableId\": \"domain\", \"reason\": \"Subject domain does not align with the source's expertise or relevance.\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "source",
+            "reason": "Value is not a credible source for the company's Q3 cash position claim."
+          },
+          {
+            "variableId": "domain",
+            "reason": "Subject domain does not align with the source's expertise or relevance."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 272,
+        "completion": 66,
+        "total": 338
+      },
+      "latencyMs": 709,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_mismatch_an_1",
+      "schemeId": "analogy",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "claim",
+        "similarity"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"similarity\", \"reason\": \"Basis of similarity does not align with the conclusion's claim; endurance sports nutrition is irrelevant to negotiating a peace treaty or marathon training.\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "similarity",
+            "reason": "Basis of similarity does not align with the conclusion's claim; endurance sports nutrition is irrelevant to negotiating a peace treaty or marathon training."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 286,
+        "completion": 53,
+        "total": 339
+      },
+      "latencyMs": 639,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_mismatch_cte_1",
+      "schemeId": "cause_to_effect",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "cause",
+        "causal_generalization"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"causal_generalization\", \"reason\": \"Causal generalization is scientifically implausible and not a valid basis for argumentation.\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "causal_generalization",
+            "reason": "Causal generalization is scientifically implausible and not a valid basis for argumentation."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 264,
+        "completion": 47,
+        "total": 311
+      },
+      "latencyMs": 565,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_mismatch_cons_1",
+      "schemeId": "consequences",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "valence"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"valence\", \"reason\": \"Value is nonsensical ('the color blue and also Tuesday') and does not indicate positive or negative valence.\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "valence",
+            "reason": "Value is nonsensical ('the color blue and also Tuesday') and does not indicate positive or negative valence."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 262,
+        "completion": 47,
+        "total": 309
+      },
+      "latencyMs": 538,
+      "mock": false
+    },
+    {
+      "testCaseId": "edge_short_eo_1",
+      "schemeId": "expert_opinion",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"claim\", \"reason\": \"Claim value 'ok' is not a meaningful proposition (true/false statement).\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "claim",
+            "reason": "Claim value 'ok' is not a meaningful proposition (true/false statement)."
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": false,
+      "tokenUsage": {
+        "prompt": 247,
+        "completion": 41,
+        "total": 288
+      },
+      "latencyMs": 729,
+      "mock": false
+    },
+    {
+      "testCaseId": "edge_french_cte_1",
+      "schemeId": "cause_to_effect",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 295,
+        "completion": 13,
+        "total": 308
+      },
+      "latencyMs": 324,
+      "mock": false
+    },
+    {
+      "testCaseId": "edge_punctuation_ptk_1",
+      "schemeId": "position_to_know",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 281,
+        "completion": 13,
+        "total": 294
+      },
+      "latencyMs": 384,
+      "mock": false
+    },
+    {
+      "testCaseId": "edge_vague_cons_1",
+      "schemeId": "consequences",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "action",
+        "consequences"
+      ],
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": false,
+      "tokenUsage": {
+        "prompt": 253,
+        "completion": 13,
+        "total": 266
+      },
+      "latencyMs": 334,
+      "mock": false
+    },
+    {
+      "testCaseId": "edge_mixed_an_1",
+      "schemeId": "analogy",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 312,
+        "completion": 13,
+        "total": 325
+      },
+      "latencyMs": 547,
+      "mock": false
+    },
+    {
+      "testCaseId": "pass_slippery_1",
+      "schemeId": "slippery_slope",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 285,
+        "completion": 13,
+        "total": 298
+      },
+      "latencyMs": 436,
+      "mock": false
+    },
+    {
+      "testCaseId": "fail_offensive_sign_1",
+      "schemeId": "sign",
+      "expectedResult": "fail",
+      "expectedViolations": [
+        "conclusion_b"
+      ],
+      "rawOutput": "{\"passed\": false, \"violations\": [{\"variableId\": \"conclusion_b\", \"reason\": \"value contains abusive, threatening, and hateful language ('worthless parasites who should be fired violently')\"}, {\"variableId\": \"sign_relationship\", \"reason\": \"value implies a causal or evaluative claim ('complaint volume indicates organizational dysfunction') that does not logically follow from the sign alone in the Argument from Sign scheme\"}]}",
+      "parsed": {
+        "passed": false,
+        "violations": [
+          {
+            "variableId": "conclusion_b",
+            "reason": "value contains abusive, threatening, and hateful language ('worthless parasites who should be fired violently')"
+          },
+          {
+            "variableId": "sign_relationship",
+            "reason": "value implies a causal or evaluative claim ('complaint volume indicates organizational dysfunction') that does not logically follow from the sign alone in the Argument from Sign scheme"
+          }
+        ]
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 269,
+        "completion": 93,
+        "total": 362
+      },
+      "latencyMs": 856,
+      "mock": false
+    },
+    {
+      "testCaseId": "edge_borderline_vague_eo_1",
+      "schemeId": "expert_opinion",
+      "expectedResult": "pass",
+      "rawOutput": "{\"passed\": true, \"violations\": []}",
+      "parsed": {
+        "passed": true,
+        "violations": []
+      },
+      "parseError": null,
+      "caseLabelCorrect": true,
+      "tokenUsage": {
+        "prompt": 249,
+        "completion": 13,
+        "total": 262
+      },
+      "latencyMs": 468,
+      "mock": false
+    }
+  ],
+  "startedAt": "2026-04-20T17:57:05.857Z",
+  "finishedAt": "2026-04-20T17:57:24.385Z"
+}

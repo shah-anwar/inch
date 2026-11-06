@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "input": "Dr. Chen, a board-certified cardiologist, states in the NEJM that daily moderate exercise reduces first-heart-attack risk; therefore we should treat that claim as well-supported.",
+    "expectedScheme": "expert_opinion"
+  },
+  {
+    "id": "2",
+    "input": "The night-shift security guard who was on the loading dock says the truck left before midnight; so the shipment did not go out in the morning batch.",
+    "expectedScheme": "position_to_know"
+  },
+  {
+    "id": "3",
+    "input": "Banning plastic straws in this coastal town is like removing a teaspoon from a flooding ship: it looks virtuous but does almost nothing to fix ocean plastic.",
+    "expectedScheme": "analogy"
+  },
+  {
+    "id": "4",
+    "input": "Repeatedly inhaling industrial solvents damages liver tissue; chronic exposure therefore predicts elevated liver enzymes in workers.",
+    "expectedScheme": "cause_to_effect"
+  },
+  {
+    "id": "5",
+    "input": "If we cut funding for rail maintenance, trains will run slower, commuters will switch to cars, downtown congestion will spike, and the city will miss emissions targets.",
+    "expectedScheme": "consequences"
+  },
+  {
+    "id": "6",
+    "input": "We should adopt the four-day school week because it cuts busing costs, improves teacher retention, and still meets state hour requirements with longer days.",
+    "expectedScheme": "practical_reasoning"
+  },
+  {
+    "id": "7",
+    "input": "First they relax zoning for duplexes; next investors carve single homes into crowded flats; soon the block is unrecognizable and property values collapse—so we must stop the first rezoning vote.",
+    "expectedScheme": "slippery_slope"
+  },
+  {
+    "id": "8",
+    "input": "She arrives coughing with a fever and lung infiltrates on X-ray; these signs point to pneumonia rather than a simple cold.",
+    "expectedScheme": "sign"
+  }
+]
