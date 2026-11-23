@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# Environment files (only the examples are tracked)
+.env
+.env.*
+!.env.example
+
+# Build and test output
+dist/
+coverage/
+src/generated/
+*.tsbuildinfo
+
+# Experiment runs (summaries under results/moderation and results/nfr are tracked)
+experiments/results/*.json
+!experiments/results/.gitkeep
+
+# Archives, documents and local data dumps
+*.zip
+*.pdf
+*.rdb
+
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# AI assistant and editor tooling
+CLAUDE.md
+AGENTS.md
+.claude/
+.cursor/
+.cursorrules
+.windsurf*
+.aider*
+.vscode/
+.idea/

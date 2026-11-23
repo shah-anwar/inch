@@ -1,0 +1,17 @@
+{
+  "name": "inch",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared/types",
+    "experiments"
+  ],
+  "scripts": {
+    "exp:run": "npx tsx experiments/scripts/runExperiment.ts",
+    "exp:summary": "npx tsx experiments/scripts/summarise.ts",
+    "exp:mod:run": "npx tsx experiments/scripts/runModerationExperiment.ts",
+    "exp:mod:summary": "npx tsx experiments/scripts/summariseModerationResults.ts"
+  }
+}

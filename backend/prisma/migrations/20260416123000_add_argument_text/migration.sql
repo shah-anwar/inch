@@ -1,0 +1,2 @@
+ALTER TABLE "Argument"
+ADD COLUMN "argumentText" TEXT NOT NULL DEFAULT '';
