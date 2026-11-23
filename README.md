@@ -9,6 +9,7 @@
   <img alt="React" src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black">
   <img alt="Fastify" src="https://img.shields.io/badge/Fastify-5-000000?logo=fastify&logoColor=white">
   <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Prisma_7-4169E1?logo=postgresql&logoColor=white">
+  <img alt="Mistral AI API" src="https://img.shields.io/badge/Mistral_AI-API-FA520F?logo=mistralai&logoColor=white">
   <a href="LICENSE"><img alt="Licence: MIT" src="https://img.shields.io/badge/licence-MIT-green"></a>
 </p>
 
@@ -44,20 +45,43 @@ INCH is a debate platform where every contribution is a structured argument and 
 Every counter-argument attacks exactly one parent, so each subtopic is a forest of attack trees. An argument is `IN` when all of its attackers are `OUT` (or it has none), `OUT` when at least one attacker is `IN`, and `UNDECIDED` otherwise. On an acyclic graph exactly one labelling satisfies these rules, and that labelling is the grounded extension. Adding a leaf can only change the arguments on its path to the root, so the worker re-evaluates just that path plus each path node's direct attackers ([`evaluation.ts`](backend/src/modules/argumentation/evaluation.ts), [`evaluationWorker.ts`](backend/src/queue/evaluationWorker.ts)). The model never takes part in this step.
 
 ```mermaid
-flowchart TD
-    A["User picks a scheme and fills its variables"] --> B["POST /arguments/text-options"]
-    B --> C{"Variable moderation<br/>(Mistral, fails open)"}
-    C -- "rejected" --> D["422 moderation_failed<br/>user edits the flagged variables"]
-    C -- "passed" --> E["Three neutral wordings<br/>(LLM, or template fallback)<br/>+ one-time preview token"]
-    E --> F["User picks a wording<br/>POST /arguments/initial or /arguments/counter"]
-    F --> G["Check preview token, scheme variables,<br/>critical-question response rules"]
-    G --> H["Insert argument as UNDECIDED<br/>append id to parent's childIds"]
-    H --> I["Enqueue BullMQ job"]
-    I --> J["Worker loads the ancestor path<br/>and each node's direct attackers"]
-    J --> K["evaluateBranch: grounded labelling"]
-    K --> L["Write changed statuses in one transaction<br/>clear Redis caches"]
-    L --> M["WebSocket STATUS_UPDATE<br/>to the subtopic room"]
-    M --> N["Graph and lists update in the browser"]
+flowchart TB
+    accTitle: From argument draft to live status
+    accDescr: Moderation checks the draft before the server issues wording options and an expiring preview token. The API validates the submission, then a BullMQ worker recalculates the affected branch and broadcasts changed statuses.
+
+    subgraph DraftStage["Draft and preview · POST /arguments/text-options"]
+        direction LR
+        Draft(["Choose a scheme<br/>and fill its variables"]) --> Check{"Moderation<br/>flags a value?"}
+        Check -->|Yes| Revise["422 · Edit flagged values"]
+        Revise -.-> Draft
+        Check -->|No| Preview["3 wordings from Mistral or templates<br/>10-minute preview token"]
+    end
+
+    subgraph SubmitStage["Submit the argument"]
+        direction LR
+        Validate["Check the active scheme<br/>and typed variables"] --> Token["Match and consume token<br/>User · inputs · selected wording"]
+        Token --> Save["Check reply rules and<br/>save as UNDECIDED"]
+        Save --> Queue["Enqueue evaluation<br/>with a per-argument job ID"]
+    end
+
+    subgraph LiveStage["Evaluate and broadcast · BullMQ concurrency 1"]
+        direction LR
+        Load["Load ancestor path<br/>and direct attackers"] --> Evaluate["Recompute grounded<br/>labels towards the root"]
+        Evaluate --> Persist["Write changed labels<br/>in one transaction"]
+        Persist --> Broadcast["Invalidate Redis caches<br/>Broadcast STATUS_UPDATE"]
+    end
+
+    DraftStage --> SubmitStage --> LiveStage
+
+    classDef action fill:#312653,stroke:#A78BFA,color:#F5F3FF
+    classDef decision fill:#432B16,stroke:#FBBF24,color:#FFFBEB
+    classDef live fill:#113B37,stroke:#5EEAD4,color:#ECFDF5
+    class Draft,Preview action
+    class Check,Revise decision
+    class Queue,Evaluate,Broadcast live
+    style DraftStage fill:none,stroke:#A78BFA
+    style SubmitStage fill:none,stroke:#A78BFA
+    style LiveStage fill:none,stroke:#5EEAD4
 ```
 
 ## Architecture
