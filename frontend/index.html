@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" style="background-color: #000505; color: #fefcfd;">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INCH</title>
+    
+    <!-- light/dark mode save initialisation script -->
+    <script>
+      const theme = localStorage.getItem("vite-ui-theme") || "dark"
+      const root = document.documentElement
+      root.classList.add("preload")
+      root.classList.remove("light", "dark")
+      root.classList.add(theme)
+      
+      if (theme === "light") {
+        root.style.backgroundColor = "#fefcfd"
+        root.style.color = "#000505"
+      }
+    </script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
